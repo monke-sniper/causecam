@@ -1,0 +1,6 @@
+{
+  "name": "causecam-demo-app",
+  "private": true,
+  "type": "commonjs",
+  "description": "Self-contained demo app for CAUSECAM. Dependencies are installed by the root package."
+}

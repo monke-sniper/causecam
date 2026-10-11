@@ -1,0 +1,54 @@
+{
+  "name": "causecam",
+  "version": "0.1.0",
+  "description": "Source-linked runtime tracing for AI coding agents: browser interaction -> network -> backend spans -> source, exposed over MCP.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "causecam": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "demo",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build || true",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run --exclude test/e2e.test.ts",
+    "demo": "node dist/cli.js demo",
+    "mcp": "node dist/cli.js mcp",
+    "doctor": "node dist/cli.js doctor"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.1.0",
+    "@opentelemetry/api": "1.9.1",
+    "@opentelemetry/exporter-trace-otlp-http": "0.222.0",
+    "@opentelemetry/instrumentation": "0.222.0",
+    "@opentelemetry/instrumentation-express": "0.70.0",
+    "@opentelemetry/instrumentation-http": "0.222.0",
+    "@opentelemetry/instrumentation-knex": "0.66.0",
+    "@opentelemetry/resources": "2.11.0",
+    "@opentelemetry/sdk-trace-node": "2.11.0",
+    "better-sqlite3": "13.0.3",
+    "commander": "15.0.0",
+    "express": "5.2.1",
+    "knex": "3.3.0",
+    "playwright": "1.63.0",
+    "require-in-the-middle": "8.0.1",
+    "tsx": "4.23.15",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "2.1.0",
+    "@types/express": "5.0.6",
+    "@types/node": "22.20.4",
+    "typescript": "6.0.3",
+    "vitest": "4.1.11"
+  }
+}
