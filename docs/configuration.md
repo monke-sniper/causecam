@@ -98,4 +98,4 @@ All trace data stays on the local machine in `causecam.db`. Nothing is sent to a
 use `causecam traces delete <id>` for one trace, or `causecam traces purge --yes` for everything.
 
 Traces are not recorded by default: request and response bodies, headers, cookies, input values (only their
-length), screenshots, page contents and SQL bind values. See [security.md](security.md) for the full list.
+length), screenshots, page contents and SQL bind values. See [Security and privacy](../README.md#security-and-privacy) in the README for the full list.
