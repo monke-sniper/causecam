@@ -14,14 +14,17 @@ which is deliberately narrow. See [Limitations](#limitations).
 
 ## Quick start (demo, ~2 minutes)
 
-Requirements: Node.js **>= 22.13** (uses the built-in `node:sqlite`), macOS or Linux.
+Requirements: Node.js **>= 22.13** (uses the built-in `node:sqlite`), macOS or Linux, and a Playwright-managed Chromium.
 
 ```bash
-git clone <this repo> causecam && cd causecam
+git clone https://github.com/monke-sniper/causecam.git && cd causecam
 npm install                        # also builds dist/ (prepare script)
 npm run doctor                     # if Chromium is reported missing: npx playwright install chromium
 npm run demo                       # demo app on http://localhost:4400, instrumented, with a seeded bug
 ```
+
+> **Working on this repo with a coding agent?** [CLAUDE.md](CLAUDE.md) has the code map, the rules the tests
+> enforce, and the gotchas (seeded demo bug, `dist/` rebuilds, stdout discipline for MCP).
 
 In a second terminal, start Claude Code **in the same folder**. The repo ships a project-scoped
 `.mcp.json`, so Claude Code offers to enable the `causecam` server (approve it). Or add it explicitly:
