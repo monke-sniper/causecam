@@ -10,6 +10,13 @@ trace over MCP — with every relationship marked **observed** or **inferred**.
 Status: **MVP / vertical slice.** It works end to end for one stack (Chromium + Node.js + Express + Knex),
 which is deliberately narrow. See [Limitations](#limitations).
 
+## Documentation
+
+- [MCP tool reference](docs/tools.md): inputs, defaults, target matching, block reasons and error messages for all six tools.
+- [Configuration and CLI](docs/configuration.md): commands, environment variables, MCP client setup, and instrumenting your own app.
+- [Gap analysis](GAP_ANALYSIS.md): what works today, how it compares with other trace-query MCP servers, and known weaknesses.
+- [CLAUDE.md](CLAUDE.md): code map and rules for working on this repo.
+
 ---
 
 ## Quick start (demo, ~2 minutes)
@@ -97,6 +104,8 @@ is two calls away from the failing line; the trace points at the line, the agent
 | `causecam_compare_traces` | Differences between two runs: request status/timing, span status, SQL statements, errors, source refs. |
 | `causecam_stop_session` | Close the browser and summarize. |
 
+Full input schemas, defaults, and error messages are in [docs/tools.md](docs/tools.md).
+
 ## CLI
 
 Run as `node dist/cli.js <command>` from the repo (or `npm link` once to get a `causecam` command).
@@ -110,6 +119,8 @@ causecam collector                       only the OTLP/HTTP JSON receiver (for a
 causecam doctor                          check Node, Chromium, ports, build, demo deps
 causecam traces [list|show <id>|compare <a> <b>|delete <id>|purge --yes]
 ```
+
+Environment variables and client setup are in [docs/configuration.md](docs/configuration.md).
 
 ## Using it on your own app
 
